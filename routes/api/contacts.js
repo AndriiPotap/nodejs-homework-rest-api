@@ -1,17 +1,13 @@
 const express = require("express");
 const { NotFound, BadRequest } = require("http-errors");
-const Joi = require("joi");
+const {joiSchema, Contact, joiContactUpdateFavoriteSchema} = require("../../models/index");
 
-const contactsOperations = require("../../model/contacts");
+const contactsOperations = require("../../models/index");
 
-const joiSchema = Joi.object({
-  name: Joi.string().required(),
-  email: Joi.string().required(),
-  phone: Joi.string().required(),
-});
+
 
 const router = express.Router();
-
+// переделать роуты, разделить индех в контролерах на одтельные ф-ии
 router.get("/", async (req, res, next) => {
   try {
     const contacts = await contactsOperations.listContacts();
