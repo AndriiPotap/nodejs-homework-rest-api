@@ -17,8 +17,8 @@ const contactSchema = Schema(
       type: Boolean,
       default: false,
     },
-  },
-  { versionKey: false, timestamps: true }
+  }
+  //   { versionKey: false, timestamps: true }
 );
 
 const joiSchema = Joi.object({
