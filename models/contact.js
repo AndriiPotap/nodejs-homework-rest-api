@@ -18,7 +18,7 @@ const contactSchema = Schema(
       default: false,
     },
     owner: {
-      type: SchemaTypes.Objectid,
+      type: SchemaTypes.ObjectId,
       ref: "user",
     }
   },
@@ -26,7 +26,7 @@ const contactSchema = Schema(
 );
 
 const joiSchema = Joi.object({
-  id: Joi.string,
+  id: Joi.string(),
   name: Joi.string().required(),
   email: Joi.string().required(),
   phone: Joi.string().required(),
