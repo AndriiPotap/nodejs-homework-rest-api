@@ -21,6 +21,9 @@ const authSchema = Schema({
         type: String,
         default: null,
       },
+      avatarURL:{
+        type: String
+      }
 }, {versionKey: false, timestamps: true });
 
 const joiAuthSchema = Joi.object({
